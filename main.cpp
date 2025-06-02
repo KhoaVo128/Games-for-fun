@@ -21,7 +21,7 @@ int main()
 
     sf::Font myFont;
 
-    if (!myFont.loadFromFile("./ARCADECLASSIC.TTF"))
+    if (!myFont.loadFromFile("./Fonts/ARCADECLASSIC.TTF"))
     {
         std::cerr<<"Could not load font\n";
         exit(-1);
