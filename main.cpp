@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+
 const unsigned int wWidth = 1280;
 const unsigned int wHeight = 720;
 int main()
@@ -14,8 +15,15 @@ int main()
     sf::CircleShape shape(25.f);
     shape.setFillColor(sf::Color::Green);
     shape.setPosition(wWidth/2,wHeight/2);
-    float shape_MoveSpeed = 0.01f;
+    float shape_MoveSpeedX = 0.3f;
+    float shape_MoveSpeedY = 0.3f;
 
+    
+    sf::RectangleShape player1({100,20});
+    player1.setFillColor(sf::Color::Green);
+    player1.setPosition(25,100);
+    float shape_MoveSpeedX = 0.0f;
+    float shape_MoveSpeedY = 0.0f;
 
 
 
@@ -42,15 +50,23 @@ int main()
 
             if(event.type==sf::Event::KeyPressed){
                 std::cout<< "Key pressed with code = "<< event.key.code <<"/n";
-
-                if(event.key.code== sf::Keyboard::X){
-                    //window.close();
-                    shape_MoveSpeed*=-1.0f;
-                }
             }    
         }
-        shape.setPosition(shape.getPosition().x-shape_MoveSpeed,shape.getPosition().y-shape_MoveSpeed);
 
+        
+        shape.setPosition(shape.getPosition().x-shape_MoveSpeedX,shape.getPosition().y-shape_MoveSpeedY);
+        
+        if (shape.getPosition().x > wWidth-50 || shape.getPosition().x<0)
+        {
+            shape_MoveSpeedX*=-1.0f;
+        }
+
+        if (shape.getPosition().y > wHeight-50 || shape.getPosition().y<0)
+        {
+            shape_MoveSpeedY*=-1.0f;
+        }
+
+        
         window.clear();
         window.draw(shape);
         window.draw(text);
