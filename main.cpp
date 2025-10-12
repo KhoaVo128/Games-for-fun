@@ -1,7 +1,5 @@
-
 #include <iostream>
 #include "Vec2.h"
-#include "Vec2.cpp"
 
 
 int main(int argc, char const *argv[])

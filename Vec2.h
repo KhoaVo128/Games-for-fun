@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VEC2_H
+#define VEC2_H
 
 class Vec2{
     public:
@@ -24,6 +25,7 @@ class Vec2{
         void operator /= (const float val);
 
         float dist(const Vec2 & rhs) const;
-
+	float length() const;
 
 };
+#endif

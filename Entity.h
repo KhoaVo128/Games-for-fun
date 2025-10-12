@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ENTITY_H
+#define ENTITY_H
+
 #include "Component.h"
 #include<memory>
 #include<string>
@@ -29,3 +31,4 @@ class Entity{
 
 
 };
+#endif

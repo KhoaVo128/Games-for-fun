@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef COMPONENT_H
+#define COMPONENT_H
 #include "Vec2.h"
 #include<SFML/Graphics.hpp>
 
@@ -65,4 +65,4 @@ class CLifespan
 
         }
 };
-
+#endif
